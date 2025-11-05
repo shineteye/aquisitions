@@ -10,8 +10,7 @@ export const cookies = {
     res.cookie(name, value, { ...cookies.getOptions(), ...options });
   },
 
-  clear: (res, options = {}) => {
-    // eslint-disable-next-line no-undef
+  clear: (res, name, options = {}) => {
     res.clearCookie(name, { ...cookies.getOptions(), ...options });
   },
 

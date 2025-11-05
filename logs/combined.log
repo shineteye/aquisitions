@@ -80,3 +80,16 @@
 {"level":"info","message":"Listening on http://localhost:3000","service":"aquisitions-api"}
 {"level":"info","message":"User registered Succeefully: test@gmail.com","service":"aquisitions-api"}
 {"level":"info","message":"::1 - - [05/Nov/2025:00:55:55 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 103 \"-\" \"PostmanRuntime/7.49.1\"","service":"aquisitions-api"}
+{"level":"info","message":"Listening on http://localhost:3000","service":"aquisitions-api"}
+{"level":"info","message":"User test@gmail.com created successfully","service":"aquisitions-api"}
+{"level":"info","message":"User registered Succeefully: test@gmail.com","service":"aquisitions-api"}
+{"level":"info","message":"::1 - - [05/Nov/2025:01:29:19 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 103 \"-\" \"PostmanRuntime/7.49.1\"","service":"aquisitions-api"}
+{"level":"info","message":"User admin@gmail.com created successfully","service":"aquisitions-api"}
+{"level":"info","message":"User registered Succeefully: admin@gmail.com","service":"aquisitions-api"}
+{"level":"info","message":"::1 - - [05/Nov/2025:01:30:52 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 101 \"-\" \"PostmanRuntime/7.49.1\"","service":"aquisitions-api"}
+{"level":"info","message":"Listening on http://localhost:3000","service":"aquisitions-api"}
+{"level":"info","message":"User admin@gmail.com authenticated successfully","service":"aquisitions-api"}
+{"level":"info","message":"User signed in successfully: admin@gmail.com","service":"aquisitions-api"}
+{"level":"info","message":"::1 - - [05/Nov/2025:22:49:18 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 113 \"-\" \"PostmanRuntime/7.49.1\"","service":"aquisitions-api"}
+{"level":"info","message":"User signed out successfully","service":"aquisitions-api"}
+{"level":"info","message":"::1 - - [05/Nov/2025:22:50:12 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"PostmanRuntime/7.49.1\"","service":"aquisitions-api"}
