@@ -1,6 +1,6 @@
-import { slidingWindow } from '@arcjet/node';
-import aj from '../config/arcjet';
-import logger from '../config/logger';
+import { detectBot, slidingWindow } from '@arcjet/node';
+import aj from '../config/arcjet.js';
+import logger from '../config/logger.js';
 
 const securityMiddleware = async (req, res, next) => {
   try {
@@ -24,15 +24,26 @@ const securityMiddleware = async (req, res, next) => {
         break;
     }
 
-    const client = aj.withRule(
-      slidingWindow({
-        mode: 'LIVE',
-        interval: '1m',
-        max: limit,
-        name: `${role}-rate-limit`,
-      })
-    );
-
+    const client = aj
+      .withRule(
+        detectBot({
+          mode: process.env.NODE_ENV === 'production' ? 'LIVE' : 'DRY_RUN',
+          allow: [
+            'CATEGORY:SEARCH_ENGINE',
+            'CATEGORY:PREVIEW',
+            'CURL',
+            'POSTMAN',
+          ],
+        })
+      )
+      .withRule(
+        slidingWindow({
+          mode: 'LIVE',
+          interval: '1m',
+          max: limit,
+          name: `${role}-rate-limit`,
+        })
+      );
     const decision = await client.protect(req);
 
     if (decision.isDenied() && decision.reason.isBot()) {
